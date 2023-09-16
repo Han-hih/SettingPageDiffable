@@ -6,7 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 struct Table: Hashable {
-    let
+    
+    let title: String
+    
+    
 }
