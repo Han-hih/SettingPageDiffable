@@ -15,14 +15,14 @@ class ViewController: UIViewController {
     }
     
     let firstList = [
-        Table(title: "방해 금지 모드", secondTitle: "켬", image: "moon.fill", color: .red),
-        Table(title: "수면", secondTitle: "", image: "bed.double.fill", color: .yellow),
-        Table(title: "업무", secondTitle: "09:00 ~ 06:00", image: "phone.fill", color: .blue),
-        Table(title: "개인 시간", secondTitle: "설정", image: "person.fill", color: .green)
+        Table(title: "방해 금지 모드", secondTitle: "켬", accessoryText: "켬", image: "moon.fill", color: .red),
+        Table(title: "수면", secondTitle: "", accessoryText: "", image: "bed.double.fill", color: .yellow),
+        Table(title: "업무", secondTitle: "09:00 ~ 06:00", accessoryText: "", image: "phone.fill", color: .blue),
+        Table(title: "개인 시간", secondTitle: "설정", accessoryText: "설정", image: "person.fill", color: .green)
     ]
     
     let secondList = [
-        Table(title: "모든 기기에서 공유", secondTitle: "", image: "", color: .clear)
+        Table(title: "모든 기기에서 공유", secondTitle: "", accessoryText: "", image: "", color: .clear)
     ]
     
     
@@ -68,7 +68,7 @@ class ViewController: UIViewController {
             content.imageToTextPadding = 20
             
             cell.contentConfiguration = content
-            cell.accessories = [.disclosureIndicator()]
+            cell.accessories = [.label(text: "\(itemIdentifier.accessoryText)") ,.disclosureIndicator()]
         
         }
         
