@@ -15,14 +15,14 @@ class ViewController: UIViewController {
     }
     
     let firstList = [
-        Table(title: "방해 금지 모드", image: "moon.fill", color: .red),
-        Table(title: "수면", image: "bed.double.fill", color: .yellow),
-        Table(title: "업무", image: "phone.fill", color: .blue),
-        Table(title: "개인 시간", image: "person.fill", color: .green)
+        Table(title: "방해 금지 모드", secondTitle: "켬", image: "moon.fill", color: .red),
+        Table(title: "수면", secondTitle: "", image: "bed.double.fill", color: .yellow),
+        Table(title: "업무", secondTitle: "09:00 ~ 06:00", image: "phone.fill", color: .blue),
+        Table(title: "개인 시간", secondTitle: "설정", image: "person.fill", color: .green)
     ]
     
     let secondList = [
-        Table(title: "모든 기기에서 공유", image: "", color: .clear)
+        Table(title: "모든 기기에서 공유", secondTitle: "", image: "", color: .clear)
     ]
     
     
@@ -61,6 +61,8 @@ class ViewController: UIViewController {
         let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Table> { cell, indexPath, itemIdentifier in
             var content = UIListContentConfiguration.valueCell()
             content.text = itemIdentifier.title
+            content.secondaryText = itemIdentifier.secondTitle
+            content.prefersSideBySideTextAndSecondaryText = false
             content.image = UIImage(systemName: "\(itemIdentifier.image)")
             content.imageProperties.tintColor = itemIdentifier.color
             content.imageToTextPadding = 20

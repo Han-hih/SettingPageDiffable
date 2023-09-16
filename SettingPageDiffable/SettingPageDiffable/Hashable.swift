@@ -10,11 +10,13 @@ import UIKit
 struct Table: Hashable {
     
     let title: String
+    let secondTitle: String
     let image: String
     let color: UIColor
     
-    init(title: String, image: String, color: UIColor) {
+    init(title: String, secondTitle: String, image: String, color: UIColor) {
         self.title = title
+        self.secondTitle = secondTitle
         self.image = image
         self.color = color
     }
